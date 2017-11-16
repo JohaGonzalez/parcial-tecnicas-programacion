@@ -33,15 +33,16 @@ def funcionSuma1(tuplaAux1):
 def tuplaAuxiliar ():
     for n in range (len(posicionesDeDisparosDePrueba)-1):
         tt= posicionesDeDisparosDePrueba [m]
-        t = funcionResto1(tt)
-        if m [tuplaAuxiliar(0)] [tuplaAuxiliar(1)] == "b"
+        t= funcionResto1(tt)
+        if m [tuplaAuxiliar(0)] [tuplaAuxiliar(1)] == "b":
             m [tuplaAuxiliar(0)] [tuplaAuxiliar(1)]== "."
+    return tuplaAuxiliar
 
 def sobrevivientes ():
     listaSobrevivientes = []
     for i in range (len (m)):
-        for j in range (len m [i])
-            if (m [i] [j]== "b")
+        for j in range (len m [i]):
+        if (m [i] [j]== "b"):
             t = (i,j)
         tAuxiliar = funcionSuma1(t)
     listaSobrevivientes.append (tAuxiliar)
