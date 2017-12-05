@@ -3,74 +3,74 @@ import ejercicio2
 
 class ejercicio2_test (unittest.TestCase):
 
-    def testBatallaDeBotesRecibeUnMapaConUnaListaVaciaDeberiaRetornarListaVacia(self):
+    def testBatallaDeBotesRecibeUnMapaVacioDeberiaRetornarListaVacia(self):
         #Arrange
-        Mapa=[]
+        mapa=[]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         #Act
-        resultado= ejercicio2.batallaDeBotes(Mapa,posicionesDeDisparosDePrueba)
+        resultado= ejercicio2.batallaDeBotes(mapa,posicionesDeDisparosDePrueba)
         #Assert
         self.assertTrue(resultado == [])
 
     def testBatallaDeBotesRecibeUnMapaVacioDeberiaRetornarUnaListaVacia(self):
         #Arrange
-        Mapa = [""]
+        mapa = [""]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         #Act
-        resultado= ejercicio2.batallaDeBotes(Mapa,posicionesDeDisparosDePrueba)
+        resultado= ejercicio2.batallaDeBotes(mapa,posicionesDeDisparosDePrueba)
         #Assert
         self.assertTrue(resultado == [])
 
-    def testBatallaDeBotesRecibeUnMapaConEspacioVaciosDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeUnMapaConEspaciosVaciosDeberiaRetornarUnaListaVacia(self):
         #Arrenge
-        Mapa = ["      "]
+        mapa = ["      "]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado,[])
 
-    def testBatallaDeBotesRecibeUnMapaConUnaFraseNoValidaDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeUnMapaNoValidDeberiaRetornarUnaListaVacia(self):
         #Arrange
-        Mapa = ["soy NO valido"]
+        mapa = ["soy NO valido"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [])
 
-    def testBatallaDeBotesRecibeUnMapaConOtraFraseNoValidaDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeOtroMapaNoValidoDeberiaRetornarUnaListaVacia(self):
         #Arrenge
-        Mapa = ["yo","tambien","soy","invalido"]
+        mapa = ["yo","tambien","soy","invalido"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado, [])
 
-    def testBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeUnMapaConDistintasCantidadesDeElementosPorFilaDeberiaRetornarUnaListaVacia(self):
         #Arrenge
-        Mapa = ["b.b.","....","..bb","b.b"]
+        mapa = ["b.b.","....","..bb","b.b"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [])
 
     def testBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirDeberiaRetornarUnaListaConPosicionesDeBarcosHundidos(self):
         #Arrenge
-        Mapa = "b.b..","b...b",".....","....b"
+        mapa = ["b.b..","b...b",".....","....b"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado,[(2,1),(2,5)])
 
     def TestBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirUnaListaVaciaDeberiaRetornarUnaListaConPosicionesDeBarcosHundidos(self):
         #Arrenge
-        Mapa = ["b..","...","..b"]
+        mapa = ["b..","...","..b"]
         posicionesDeDisparosDePrueba = []
         # Act
-        resultado = ejercicio2.batallaDeBotes(Mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [(1,1),(3,3)])
