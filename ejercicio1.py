@@ -17,3 +17,4 @@ def rotacionesDePalabra(palabra):
         ultimaLetra= ultimaLetra - 1
     rotacion2 = rotacion2 [::-1]
     return rotacion2
+
