@@ -11,7 +11,7 @@ class ejercicio3_test (unittest.TestCase):
         #Assert
         self.assertEqual(resultado,"")
 
-    def testGandorDeLigaRecibeUnaListaDeTuplasConEquiposDeberiaRetornasUnaCadenaConElEquipoGanador(self):
+    def testGandorDeLigaRecibeUnaListaDeTuplasConEquiposDeberiaRetornarElEquipoGanador(self):
         #Arrenge
         equipos = [("a", 1, "b", 0)]
         #Act
@@ -35,7 +35,7 @@ class ejercicio3_test (unittest.TestCase):
         # Assert
         self.assertEqual(resultado, "Almagro")
 
-    def testGanadorDeLigaRecibeUnaListaDeTuplasConCuatroPartidosDeberiaRettornarElEquipoGanador(self):
+    def testGanadorDeLigaRecibeUnaListaDeTuplasConCuatroPartidosDeberiaRetornarElEquipoGanador(self):
         # Arrenge
         equipos = [("a", 1, "b", -2), ("a", 1, "c", 1), ("c", 1, "b", 1), ("d", 1, "a", 9)]
         # Act

@@ -53,7 +53,7 @@ def disparAlMapa(mapa,posicionesADisparar):
         columna = disparo[1]-1
         mapa[fila][columna] = False
 
-def obtenerPosicionesBarcosNoHundidos(mapa):
+def obtenerPosicionesBotesNoHundidos(mapa):
 
     posiciones = []
 
@@ -66,28 +66,13 @@ def obtenerPosicionesBarcosNoHundidos(mapa):
 
     return posiciones
 
-def batallaDeBotes (mapa,posicionADisparar):
+def calcularPosicionesBotesNoHundidos(mapa, posicionADisparar):
 
     if mapaInvalido(mapa):
         return[]
 
     mapaConBooleanos = convertirMapaAMapaBooleano(mapa)
     disparAlMapa(mapaConBooleanos,posicionADisparar)
-    posicionesBarcosSinHundir = obtenerPosicionesBarcosNoHundidos(mapaConBooleanos)
+    posicionesBotesSinHundir = obtenerPosicionesBotesNoHundidos(mapaConBooleanos)
 
-    return posicionesBarcosSinHundir
-
-
-def ejercicio2(var1,var2):
-    return batallaDeBotes(var1,var2)
-
-posicionesDeDisparosDePrueba = [(1,1),(3,4),(1,3),(4,5)]
-
-assert (ejercicio2([],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2([""],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["      "],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["soy NO valido"],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["yo","tambien","soy","invalido"],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["b.b.","....","..bb","b.b"],posicionesDeDisparosDePrueba) == [])
-assert (ejercicio2(["b.b..","b...b",".....","....b"],posicionesDeDisparosDePrueba) == [(2,1),(2,5)])
-assert (ejercicio2(["b..","...","..b"],[]) == [(1,1),(3,3)])
+    return posicionesBotesSinHundir

@@ -43,7 +43,7 @@ class ejercicio1_test (unittest.TestCase):
         #Assert
         self.assertEqual(resultado,['paz','azp','zpa'])
 
-    def testRotacionesDePalabraRecibeUnaCadenaConUnaPalabraDivididaDeberiaRetornarUnaListaConLaRotacionDeLaPalabra(self):
+    def testRotacionesDePalabraRecibeUnaCadenaConUnaPalabraDivididaPorUnEspacioDeberiaRetornarUnaListaConLaRotacionDeLaPalabra(self):
         #Arrenge
         cadena = "so l"
         #Act
@@ -51,7 +51,7 @@ class ejercicio1_test (unittest.TestCase):
         # Assert
         self.assertTrue(resultado == ['so l','o ls',' lso','lso '])
 
-    def testRotacionesDePalabraRecibeUnaCadenaConOtraPalabraDeberiaRertornarUnalistaConLasRotacionesDeEsasPalabras(self):
+    def testRotacionesDePalabraRecibeUnaPalabraDeCincoLetrasDeberiaRertornarUnalistaConLasCincoRotacionesDeEsaPalabra(self):
         #Arrange
         cadena = "rotar"
         #Act

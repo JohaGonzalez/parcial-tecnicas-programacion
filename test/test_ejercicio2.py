@@ -8,16 +8,16 @@ class ejercicio2_test (unittest.TestCase):
         mapa=[]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         #Act
-        resultado= ejercicio2.batallaDeBotes(mapa,posicionesDeDisparosDePrueba)
+        resultado= ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         #Assert
         self.assertTrue(resultado == [])
 
-    def testBatallaDeBotesRecibeUnMapaVacioDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeOtroTipoDeMapaVacioDeberiaRetornarUnaListaVacia(self):
         #Arrange
         mapa = [""]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         #Act
-        resultado= ejercicio2.batallaDeBotes(mapa,posicionesDeDisparosDePrueba)
+        resultado= ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         #Assert
         self.assertTrue(resultado == [])
 
@@ -26,16 +26,16 @@ class ejercicio2_test (unittest.TestCase):
         mapa = ["      "]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado,[])
 
-    def testBatallaDeBotesRecibeUnMapaNoValidDeberiaRetornarUnaListaVacia(self):
+    def testBatallaDeBotesRecibeUnMapaNoValidoDeberiaRetornarUnaListaVacia(self):
         #Arrange
         mapa = ["soy NO valido"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [])
 
@@ -44,7 +44,7 @@ class ejercicio2_test (unittest.TestCase):
         mapa = ["yo","tambien","soy","invalido"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado, [])
 
@@ -53,24 +53,24 @@ class ejercicio2_test (unittest.TestCase):
         mapa = ["b.b.","....","..bb","b.b"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [])
 
-    def testBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirDeberiaRetornarUnaListaConPosicionesDeBarcosHundidos(self):
+    def testBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirDeberiaRetornarUnaListaConPosicionesDeBarcosNoHundidos(self):
         #Arrenge
         mapa = ["b.b..","b...b",".....","....b"]
         posicionesDeDisparosDePrueba = [(1, 1), (3, 4), (1, 3), (4, 5)]
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertEqual(resultado,[(2,1),(2,5)])
 
-    def TestBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirUnaListaVaciaDeberiaRetornarUnaListaConPosicionesDeBarcosHundidos(self):
+    def TestBatallaDeBotesRecibeUnMapaConPosicionesDeBarcosSinHundirUnaListaVaciaDeberiaRetornarUnaListaConPosicionesDeBarcosNoHundidos(self):
         #Arrenge
         mapa = ["b..","...","..b"]
         posicionesDeDisparosDePrueba = []
         # Act
-        resultado = ejercicio2.batallaDeBotes(mapa, posicionesDeDisparosDePrueba)
+        resultado = ejercicio2.calcularPosicionesBotesNoHundidos(mapa, posicionesDeDisparosDePrueba)
         # Assert
         self.assertTrue(resultado == [(1,1),(3,3)])
